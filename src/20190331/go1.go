@@ -1,3 +1,6 @@
+/**
+闭包的练习
+ */
 package main
 
 import (
@@ -36,7 +39,7 @@ func addUpper() func(int) int {
 }
 
 func mackSuffix(suffix string) func(string) string {
-	// 闭包的理解 就是常驻内存
+	// 闭包的理解 就是常驻内存和js中的闭包有点相似
 	return func(name string) string {
 		if !strings.HasSuffix(name,suffix) {
 			return name + suffix

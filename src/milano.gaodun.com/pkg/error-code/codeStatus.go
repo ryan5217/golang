@@ -1,0 +1,146 @@
+package error_code
+
+// CodeTypeInt ...
+type CodeTypeInt int
+
+const (
+	NOT_FIND = 404  // 没有找到资源或为空的 统一返回 404
+)
+
+//U为更新 F为失败  A为添加  SUCC 为成功 C 复制 G查找
+const (
+	SUCCESSSTATUS = 0
+	SYSERR        = 11100001 + iota
+	DBERR
+	PARAMETERERR
+	NOMOREDATA
+	NODATA
+	FAIL
+	MUSTFIELD
+	SELFINVIT
+	PARAMETERNULL
+	INVITERR
+	INVITMISSING
+	INVITMAX
+	INVITDUPLICATE
+	HTTPERR
+	USERINFOERR
+	NEWUSERERR
+	PHONECODEERR
+	WEIXINERR
+	PHONEREGERR
+	SENDPHONECODEERR
+	GOODSNOTEXIST
+	GOODSDELETE
+	GOODSNOTSTART
+	GOODSEXPIRED
+	GOODSEXCHANGELIMIT
+	REMAINLIMIT
+	EXCHANGETYPELIMIT
+	COLLECTION_TYPE_NOT_EXITS
+	DATA_ADD_REPEAD
+	TREELISTAPI
+	GOODSBUYAPI
+	ITEMCATEGORYAPI
+	TKYXUSERCHANGEMODELDBERR
+	KNOWLEDGEIDEMPTY
+	GOODSCONFIGERR
+	GOODSORDERAPIERR
+	GOODSORDERCREATEERR
+	TKSTUDENTIDERR
+	GOODSDETAILAPIERR
+	SALESMANAPIERR
+	PUBLICCOURSEERR
+	SALESMANDATAERR
+	SECKILLAPIERR
+	TOCAPIERR
+	COURSEPROGRESSAPIERR
+	EXAMAPIERR
+	EXAMDATEEMPTY
+	RECOMMENDCOURSEEMPTY
+	GOODSORDERLISTAPIERR
+	EXAMMODELERR
+	DOONEITEMMODELERR
+	ADVERTSAPIERR
+	ADVERTSDATAEMPTY
+	TKORDERMODELERR
+	MEMBERSSTUDENTMODELERR
+	MEMBERSSTUDENTINFOEMPTY
+	ACTIVITYUSERMODELERR
+	PAPERRECORDAPI
+	USER_PHONE_NOT_FOUND
+	SYSTEM_INFO_SEND_FAILD
+	UIDEMPTYERR = 104
+)
+
+// INFO ...
+var INFO = GetInfo()
+
+// GetInfo ...
+func GetInfo() map[int]string {
+	info := make(map[int]string)
+	info[SUCCESSSTATUS] = "请求成功"
+	info[UIDEMPTYERR] = "学生id不能为空"
+	info[SYSERR] = "系统错误"
+	info[DBERR] = "DB 错误"
+	info[NOMOREDATA] = "没有更多数据"
+	info[PARAMETERERR] = "参数错误"
+	info[MUSTFIELD] = "缺少必填项"
+	info[NODATA] = "无数据"
+	info[FAIL] = "失败"
+	info[SELFINVIT] = "无法邀请自己"
+	info[PARAMETERNULL] = "缺少参数"
+	info[INVITERR] = "推荐码错误"
+	info[INVITMISSING] = "推荐码不存在"
+	info[INVITMAX] = "推荐人数达到上限"
+	info[INVITDUPLICATE] = "推荐人已添加，无需重复"
+	info[HTTPERR] = "http请求错误"
+	info[USERINFOERR] = "获取用户信息失败"
+	info[NEWUSERERR] = "该用户并非新用户"
+	info[PHONECODEERR] = "手机验证码错误"
+	info[WEIXINERR] = "微信登录校验失败"
+	info[PHONEREGERR] = "手机号已经注册"
+	info[SENDPHONECODEERR] = "发送手机验证码失败"
+	info[GOODSNOTEXIST] = "商品不存在"
+	info[GOODSDELETE] = "商品已删除"
+	info[GOODSNOTSTART] = "商品兑换尚未开始"
+	info[GOODSEXPIRED] = "商品已过期"
+	info[GOODSEXCHANGELIMIT] = "已达到兑换次数上限"
+	info[REMAINLIMIT] = "余额不足"
+	info[EXCHANGETYPELIMIT] = "目前仅支持推荐人次数兑换"
+	info[COLLECTION_TYPE_NOT_EXITS] = "反馈类型不存在"
+	info[DATA_ADD_REPEAD] = "数据重复添加"
+	info[TREELISTAPI] = "关系树接口调用失败"
+	info[GOODSBUYAPI] = "商品是否购买接口调用失败"
+	info[ITEMCATEGORYAPI] = "知识点接口调用失败"
+	info[TKYXUSERCHANGEMODELDBERR] = "营销学生id查询db失败"
+	info[KNOWLEDGEIDEMPTY] = "知识点id不能为空"
+	info[GOODSCONFIGERR] = "商品配置不正确"
+	info[GOODSORDERAPIERR] = "商品下单接口调用失败"
+	info[GOODSORDERCREATEERR] = "免费课程下单失败"
+	info[TKSTUDENTIDERR] = "营销学生id为空"
+	info[GOODSDETAILAPIERR] = "商品详情接口调用失败"
+	info[SALESMANAPIERR] = "获取销售员接口调用失败"
+	info[PUBLICCOURSEERR] = "公开课数据配置错误"
+	info[SALESMANDATAERR] = "销售员数据配置错误"
+	info[SECKILLAPIERR] = "秒杀详情接口调用失败"
+	info[TOCAPIERR] = "获取大纲阶段接口调用失败"
+	info[COURSEPROGRESSAPIERR] = "获取saas课程进度接口调用失败"
+	info[EXAMAPIERR] = "获取考试日期接口调用失败"
+	info[EXAMDATEEMPTY] = "考试日期没有设置"
+	info[RECOMMENDCOURSEEMPTY] = "推荐课程尚未设置"
+	info[GOODSORDERLISTAPIERR] = "获取用户商品订单列表接口调用失败"
+	info[EXAMMODELERR] = "查询考试日期失败"
+	info[DOONEITEMMODELERR] = "查询做题数量失败"
+	info[ADVERTSAPIERR] = "获取广告列表接口调用失败"
+	info[ADVERTSDATAEMPTY] = "广告列表数据为空"
+	info[TKORDERMODELERR] = "数据库查询订单列表失败"
+	info[MEMBERSSTUDENTMODELERR] = "数据库查询学生信息失败"
+	info[MEMBERSSTUDENTINFOEMPTY] = "学生信息不存在"
+	info[ACTIVITYUSERMODELERR] = "查询联系方式失败"
+	info[PAPERRECORDAPI] = "查询联系方式失败"
+	info[USER_PHONE_NOT_FOUND] = "未找到用户的联系方式"
+	info[SYSTEM_INFO_SEND_FAILD] = "系统消息发送失败"
+	info[NOT_FIND] = "数据为空"
+	return info
+}

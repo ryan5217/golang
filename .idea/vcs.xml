@@ -1,8 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/mindoc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-axgle-mahonia" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-bitly-go--simplejson" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-boj-redistore" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-bradfitz-gomemcache" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-chenhg5-gin--reverseproxy" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-davecgh-go--spew" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-dgrijalva-jwt--go" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-garyburd-redigo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-gin--contrib-cache" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-gin--contrib-pprof" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-gin--contrib-sse" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-gin--gonic-contrib" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-gin--gonic-gin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-go--redis-redis" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-go--sql--driver-mysql" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-golang-protobuf" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-gorilla-context" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-gorilla-securecookie" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-gorilla-sessions" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-jinzhu-gorm" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-jinzhu-inflection" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-json--iterator-go" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-mattn-go--isatty" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-modern--go-concurrent" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-modern--go-reflect2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-pmezard-go--difflib" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-robfig-cron" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-robfig-go--cache" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-stretchr-testify" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---github.com-ugorji-go" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---gopkg.in-go--playground-validator.v8" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/pkg/dep/sources/https---gopkg.in-yaml.v2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/BurntSushi/toml" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/broqiang/mdblog" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/chenhg5/morningo-installer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/fvbock/endless" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/gin-contrib/sse" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/gin-gonic/gin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/go-sql-driver/mysql" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/golang/dep" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/golang/protobuf" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/jinzhu/gorm" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/jinzhu/inflection" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/mattn/go-isatty" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/microcosm-cc/bluemonday" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/github.com/silenceshell/hcache" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/github.com/tobert/pcstat" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/ugorji/go" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/gopkg.in/go-playground/validator.v8" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/gopkg.in/russross/blackfriday.v1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/gopkg.in/yaml.v2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/mdblog" vcs="Git" />
   </component>
 </project>

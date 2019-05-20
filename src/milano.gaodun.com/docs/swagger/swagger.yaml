@@ -1,0 +1,29 @@
+basePath: /v1
+info:
+  contact: {}
+  description: An example of gin
+  license:
+    name: MIT
+    url: 127.0.0.1:6001
+  termsOfService: 127.0.0.1:6001
+  title: Golang Gin API
+  version: "1.0"
+paths:
+  /secret/{access_key}:
+    get:
+      parameters:
+      - description: 秘钥KEY
+        in: path
+        name: access_key
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: '{"status": 1,"message": "","result": {"access_key": "xxx","access_secret":
+            ""}}'
+          schema:
+            type: string
+      summary: 获取S
+swagger: "2.0"

@@ -1,0 +1,46 @@
+variables:
+    VERSION: "v1.0.1"
+before_script:
+    - echo "Begin"
+    - export ITEM_NAME=`basename $CI_PROJECT_DIR`
+    - export GOPATH=/gaodun/gopath
+    - export PATH=$PATH:/gaodun/gopath/bin
+    - go get github.com/tools/godep
+    - export GOPATH="$GOPATH:`dirname $CI_PROJECT_DIR`"
+    - mkdir -p /gaodun/tmp/gitlab_tar_file/
+maketar:
+  script:
+    - echo `dirname $CI_PROJECT_DIR`
+    - git init
+    - cd `dirname $CI_PROJECT_DIR`
+    - echo "itemname|$ITEM_NAME" > "$ITEM_NAME.txt"
+    - echo "ci_build_ref|$CI_BUILD_REF" >> "$ITEM_NAME.txt"
+    - echo "ci_build_tag|$CI_BUILD_TAG" >> "$ITEM_NAME.txt"
+    - echo "ci_build_name|$CI_BUILD_NAME" >> "$ITEM_NAME.txt"
+    - echo "ci_build_stage|$CI_BUILD_STAGE" >> "$ITEM_NAME.txt"
+    - echo "ci_build_ref_name|$CI_BUILD_REF_NAME" >> "$ITEM_NAME.txt"
+    - echo "ci_build_repo|$CI_BUILD_REPO" >> "$ITEM_NAME.txt"
+    - echo "ci_build_id|$CI_BUILD_ID" >> "$ITEM_NAME.txt"
+    - echo "ci_project_id|$CI_PROJECT_ID" >> "$ITEM_NAME.txt"
+    - echo "ci_project_dir|$CI_PROJECT_DIR" >> "$ITEM_NAME.txt"
+    - cp -f "$ITEM_NAME.txt" "$CI_PROJECT_DIR/DEPLOY"
+    - rm -rf src
+    - mkdir src && cp -Rf $ITEM_NAME src/$ITEM_NAME
+    - cd src/$ITEM_NAME
+    - godep go build ./
+    - cd ..
+    - tar czf "$ITEM_NAME-${CI_BUILD_REF_NAME/\//_}-$CI_BUILD_REF.tar.gz" "$ITEM_NAME/$ITEM_NAME" "$ITEM_NAME/DEPLOY" "$ITEM_NAME/manager.sh" "$ITEM_NAME/rpc.sh"
+    - mv "$ITEM_NAME-${CI_BUILD_REF_NAME/\//_}-$CI_BUILD_REF.tar.gz" /gaodun/tmp/gitlab_tar_file/
+    - rm $CI_PROJECT_DIR/* -rf
+    - mv {$ITEM_NAME/$ITEM_NAME,$ITEM_NAME/DEPLOY,$ITEM_NAME/manager.sh,$ITEM_NAME/rpc.sh} $CI_PROJECT_DIR/
+    - export itemfile=`dirname $CI_PROJECT_DIR`"/"$ITEM_NAME".txt"
+    - export localfile="/gaodun/tmp/gitlab_tar_file/$ITEM_NAME-${CI_BUILD_REF_NAME/\//_}-$CI_BUILD_REF.tar.gz"
+    - cd /gaodun/kuber
+    - sudo sh up_image.sh $ITEM_NAME $CI_BUILD_REF ${CI_BUILD_REF_NAME/\//_} $CI_PROJECT_DIR
+    - /gaodun/dist/python2.7/bin/python2.7 /gaodun/dist/script/oss/oss_upload.py $localfile $itemfile
+    - rm -f "/gaodun/tmp/gitlab_tar_file/$ITEM_NAME-${CI_BUILD_REF_NAME/\//_}-$CI_BUILD_REF.tar.gz"
+    - rm -f "$ITEM_NAME.txt"
+
+after_script:
+    - echo "End"
+    - exit 0

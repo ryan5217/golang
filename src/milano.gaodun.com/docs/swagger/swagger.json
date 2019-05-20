@@ -1,0 +1,42 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "An example of gin",
+        "title": "Golang Gin API",
+        "termsOfService": "127.0.0.1:6001",
+        "contact": {},
+        "license": {
+            "name": "MIT",
+            "url": "127.0.0.1:6001"
+        },
+        "version": "1.0"
+    },
+    "basePath": "/v1",
+    "paths": {
+        "/secret/{access_key}": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "获取S",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "秘钥KEY",
+                        "name": "access_key",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{\"status\": 1,\"message\": \"\",\"result\": {\"access_key\": \"xxx\",\"access_secret\": \"\"}}",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
